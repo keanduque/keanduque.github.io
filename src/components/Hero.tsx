@@ -105,7 +105,7 @@ const Hero = () => {
             Hi, I'm <span className="text-orange-400">Kean Duque</span>
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-slate-300 mb-4">
-            Front-End Developer
+            Senior Frontend Developer & GIS Specialist
           </p>
           <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-12">
             Crafting beautiful, responsive web experiences with over 10 years of

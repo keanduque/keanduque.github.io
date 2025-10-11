@@ -1,46 +1,35 @@
-import { useState, useEffect } from "react";
-import Navigation from "./components/Navigation";
+import { useState } from "react";
+
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Expertise from "./components/Expertise";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 
+import Loader from "./components/Loader";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 function App() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "skills", "experience", "contact"];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  if (isLoading) {
+    return <Loader onLoadingComplete={() => setIsLoading(false)} />;
+  }
 
   return (
-    <div className="min-h-screen bg-slate-950">
-      <Navigation activeSection={activeSection} />
+    <div className="min-h-screen bg-slate-900">
+      <Header />
       <Hero />
       <About />
+      <Expertise />
       <Skills />
+      <Projects />
       <Experience />
       <Contact />
+      <Footer />
     </div>
   );
 }
