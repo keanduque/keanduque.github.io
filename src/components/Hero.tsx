@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowDown, ChevronsDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronsDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const Hero = () => {
