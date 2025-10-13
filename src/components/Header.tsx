@@ -19,7 +19,7 @@ export default function Header() {
             <span>Kean Duque</span> */}
             <div className="text-2xl font-bold text-white">
               <img
-                src="/keanduque-logo.png"
+                src="/keanduque-logo2.png"
                 alt="Keanduque Logo"
                 className="h-10 w-auto"
               />

@@ -33,7 +33,7 @@ export default function Loader({ onLoadingComplete }: LoaderProps) {
           <div className="flex items-center justify-center gap-3 mb-7">
             <div className="text-emerald-400 animate-spin-slow">
               <img
-                src="/keanduque-avatar.png"
+                src="/kd_avatar2.png"
                 alt="Keanduque Logo"
                 className="h-20 w-auto"
               />
@@ -45,7 +45,7 @@ export default function Loader({ onLoadingComplete }: LoaderProps) {
             alt="Keanduque Logo"
             className="h-10 w-auto"
           />
-          <p className="text-slate-400">Loading Profile...</p>
+          <p className="text-slate-400">Welcome to my Profile...</p>
         </div>
 
         <div className="w-64 h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700 mx-auto">

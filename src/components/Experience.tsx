@@ -78,7 +78,18 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-slate-900">
+    <section
+      id="experience"
+      className="py-20 bg-cover bg-center relative"
+      style={{
+        backgroundImage:
+          "linear-gradient(to bottom, rgba(15,23,42,0.3) 0%, rgba(15,23,42,0.6) 60%, rgba(15,23,42,1) 100%), url('/sky_bg.jpg')",
+        backgroundPosition: "bottom center",
+
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
@@ -145,6 +156,13 @@ export default function Experience() {
           </div>
         </div>
       </div>
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent "
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, transparent, rgb(20, 31, 50, 0.9))",
+        }}
+      />
     </section>
   );
 }

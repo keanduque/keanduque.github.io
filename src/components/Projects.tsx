@@ -65,7 +65,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-slate-900">
+    <section id="projects" className="py-20 bg-slate-900 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
@@ -132,6 +132,13 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, transparent, rgb(24, 32, 43,0.95))",
+        }}
+      />
     </section>
   );
 }
