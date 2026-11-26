@@ -1,4 +1,67 @@
 import { skillCategories } from "../data/skills";
-import { Code2, Layers, Server, Database, Globe, ShoppingCart, Sparkles, GitBranch, Users } from "lucide-react";
-const icons = [Code2, Layers, Server, Database, Globe, ShoppingCart, Sparkles, GitBranch, Users];
-export default function Skills() { return (<section id="skills" className="py-20 bg-slate-900"><div className="container mx-auto px-6 max-w-6xl"><h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">Technical Skills & Tools</h2><div className="h-1 w-24 bg-gradient-to-r from-orange-400 to-cyan-400 mx-auto rounded-full mb-8" /><p className="text-slate-400 text-center max-w-3xl mx-auto mb-10">Technologies I have used across professional projects, personal development and ongoing learning.</p><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">{skillCategories.map((category,index)=>{const Icon=icons[index] ?? Code2; return <article key={category.title} className="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-orange-400 transition-colors"><div className="flex items-center gap-3 mb-4"><Icon className="text-orange-400" size={28}/><h3 className="text-xl font-semibold text-white">{category.title}</h3></div><div className="flex flex-wrap gap-2">{category.skills.map(skill=><span key={skill} className="px-3 py-1 bg-slate-900 text-slate-300 text-sm rounded-full border border-slate-700">{skill}</span>)}</div></article>})}</div></div></section>); }
+import {
+  Code2,
+  Layers,
+  Server,
+  Database,
+  Globe,
+  ShoppingCart,
+  Sparkles,
+  GitBranch,
+  Users,
+} from "lucide-react";
+const icons = [
+  Code2,
+  Layers,
+  Server,
+  Database,
+  Globe,
+  ShoppingCart,
+  Sparkles,
+  GitBranch,
+  Users,
+];
+export default function Skills() {
+  return (
+    <section id="skills" className="py-20 bg-slate-900">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
+          Technical Skills & Tools
+        </h2>
+        <div className="h-1 w-24 bg-gradient-to-r from-orange-400 to-cyan-400 mx-auto rounded-full mb-8" />
+        <p className="text-slate-400 text-center max-w-3xl mx-auto mb-10">
+          Technologies I have used across professional projects, personal
+          development and ongoing learning.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, index) => {
+            const Icon = icons[index] ?? Code2;
+            return (
+              <article
+                key={category.title}
+                className="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-orange-400 transition-colors"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="text-orange-400" size={28} />
+                  <h3 className="text-xl font-semibold text-white">
+                    {category.title}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 bg-slate-900 text-slate-300 text-sm rounded-full border border-slate-700"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

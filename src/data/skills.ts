@@ -2,8 +2,8 @@ import type { SkillGroup } from "../types/portfolio";
 
 export const skillCategories: SkillGroup[] = [
   {
-    "title": "Frontend Development",
-    "skills": [
+    title: "Frontend Development",
+    skills: [
       "HTML5",
       "CSS3/SCSS",
       "JavaScript ES6+",
@@ -14,23 +14,23 @@ export const skillCategories: SkillGroup[] = [
       "Backbone.js",
       "jQuery",
       "Frappe",
-      "Salesforce LWC"
-    ]
+      "Salesforce LWC",
+    ],
   },
   {
-    "title": "React & UI Libraries",
-    "skills": [
+    title: "React & UI Libraries",
+    skills: [
       "TanStack Query",
       "TanStack Table",
       "React Router",
       "Styled Components",
       "Responsive Design",
-      "WCAG 2.1 AA"
-    ]
+      "WCAG 2.1 AA",
+    ],
   },
   {
-    "title": "Backend & APIs",
-    "skills": [
+    title: "Backend & APIs",
+    skills: [
       "Node.js",
       "Express.js",
       "PHP",
@@ -39,12 +39,12 @@ export const skillCategories: SkillGroup[] = [
       "C#",
       "REST APIs",
       "SuiteScript 2.0",
-      "Salesforce Apex"
-    ]
+      "Salesforce Apex",
+    ],
   },
   {
-    "title": "Databases",
-    "skills": [
+    title: "Databases",
+    skills: [
       "PostgreSQL",
       "PostGIS",
       "MySQL",
@@ -52,12 +52,12 @@ export const skillCategories: SkillGroup[] = [
       "SQL",
       "Oracle DB",
       "MariaDB",
-      "MS Access"
-    ]
+      "MS Access",
+    ],
   },
   {
-    "title": "GIS & Spatial Tools",
-    "skills": [
+    title: "GIS & Spatial Tools",
+    skills: [
       "ArcGIS Online",
       "ArcGIS Pro",
       "ArcGIS REST API",
@@ -66,54 +66,54 @@ export const skillCategories: SkillGroup[] = [
       "Leaflet",
       "React-Leaflet",
       "WMS/WFS",
-      "QGIS"
-    ]
+      "QGIS",
+    ],
   },
   {
-    "title": "ERP, CRM & CMS",
-    "skills": [
+    title: "ERP, CRM & CMS",
+    skills: [
       "NetSuite ERP",
       "SuiteCommerce Advanced",
       "Infor Lawson LPL",
       "WordPress",
       "TYPO3",
       "Magento",
-      "Salesforce CRM"
-    ]
+      "Salesforce CRM",
+    ],
   },
   {
-    "title": "AI & Emerging Technologies",
-    "skills": [
+    title: "AI & Emerging Technologies",
+    skills: [
       "Google Gemini",
       "OpenAI",
       "Claude",
       "OCI Generative AI",
       "Prompt Engineering",
-      "RAG concepts"
-    ]
+      "RAG concepts",
+    ],
   },
   {
-    "title": "DevOps & Engineering",
-    "skills": [
+    title: "DevOps & Engineering",
+    skills: [
       "Git",
       "SVN",
       "Docker",
       "Linux/Unix",
       "CI/CD",
       "Code Reviews",
-      "SDLC"
-    ]
+      "SDLC",
+    ],
   },
   {
-    "title": "Collaboration & Design",
-    "skills": [
+    title: "Collaboration & Design",
+    skills: [
       "Agile",
       "Scrum",
       "Sprint Planning",
       "Kanban",
       "Figma",
       "Adobe XD",
-      "Testing & Debugging"
-    ]
-  }
+      "Testing & Debugging",
+    ],
+  },
 ];

@@ -3,6 +3,136 @@ import { ExternalLink, Github } from "lucide-react";
 import { projects } from "../data/projects";
 import { getImage } from "../utils/assets";
 import type { Project } from "../types/portfolio";
-const categories = ["All Projects", ...new Set(projects.map(p=>p.category))];
-function ProjectCard({project}: {project: Project}) { return <article className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-orange-400 transition-colors flex flex-col h-full"><div className="relative h-52 bg-slate-950"><img src={getImage(project.image)} alt={`${project.title} screenshot`} loading="lazy" className="w-full h-full object-cover object-top"/><span className="absolute top-3 right-3 bg-orange-600 text-white text-xs rounded-full px-3 py-1">{project.category}</span></div><div className="p-6 flex flex-col flex-1"><div className="flex flex-wrap justify-between gap-2 text-xs text-slate-400 mb-3"><span>{project.company}</span><span>{project.status}</span></div><h3 className="text-xl font-bold text-white mb-3">{project.title}</h3><p className="text-sm text-slate-300 leading-relaxed mb-4">{project.description}</p><details className="mb-4 text-sm text-slate-300"><summary className="cursor-pointer text-cyan-400">View project details</summary><ul className="list-disc pl-5 mt-3 space-y-2">{project.features.map(f=><li key={f}>{f}</li>)}</ul></details><div className="flex flex-wrap gap-2 mb-5">{project.technologies.map(t=><span key={t} className="text-xs px-3 py-1 bg-slate-900 rounded-lg text-slate-300 border border-slate-700">{t}</span>)}</div><div className="mt-auto pt-4 border-t border-slate-700 flex flex-wrap gap-4 text-sm">{project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center text-orange-400"><Github size={16}/>{project.githubLabel ?? "Source Code"}</a>}{project.website && <a href={project.website} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center text-cyan-400"><ExternalLink size={16}/>Live Website</a>}{!project.github&&!project.website&&<span className="text-slate-400">Public preview unavailable</span>}</div></div></article> }
-export default function Projects(){const [active,setActive]=useState("All Projects"); const filtered=active==="All Projects"?projects:projects.filter(p=>p.category===active); return (<section id="projects" className="py-20 bg-slate-900"><div className="container mx-auto px-6 max-w-6xl"><h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">Featured Projects</h2><div className="h-1 w-24 bg-gradient-to-r from-orange-400 to-cyan-400 mx-auto rounded-full mb-8" /><p className="text-slate-400 text-center max-w-3xl mx-auto mb-10">A selection of professional and personal projects in web development, GIS, e-commerce and CMS.</p><div className="flex flex-wrap justify-center gap-3 mb-8" role="group" aria-label="Filter projects">{categories.map(c=><button key={c} type="button" aria-pressed={active===c} onClick={()=>setActive(c)} className={`px-4 py-2 rounded-lg border text-sm ${active===c?'bg-orange-600 border-orange-600 text-white':'bg-slate-800 border-slate-700 text-slate-300'}`}>{c} ({c==="All Projects"?projects.length:projects.filter(p=>p.category===c).length})</button>)}</div><p aria-live="polite" className="text-sm text-slate-400 mb-5">Showing {filtered.length} of {projects.length} projects</p><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">{filtered.map(project=><ProjectCard key={project.id} project={project}/>)}</div><p className="text-xs text-slate-400 text-center mt-10">Professional projects were delivered as part of teams. Proprietary code is not included in public samples. Live websites may have changed since my contributions.</p></div></section>); }
+const categories = [
+  "All Projects",
+  ...new Set(projects.map((p) => p.category)),
+];
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <article className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-orange-400 transition-colors flex flex-col h-full">
+      <div className="relative h-52 bg-slate-950">
+        <img
+          src={getImage(project.image)}
+          alt={`${project.title} screenshot`}
+          loading="lazy"
+          className="w-full h-full object-cover object-top"
+        />
+        <span className="absolute top-3 right-3 bg-orange-600 text-white text-xs rounded-full px-3 py-1">
+          {project.category}
+        </span>
+      </div>
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex flex-wrap justify-between gap-2 text-xs text-slate-400 mb-3">
+          <span>{project.company}</span>
+          <span>{project.status}</span>
+        </div>
+        <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+        <p className="text-sm text-slate-300 leading-relaxed mb-4">
+          {project.description}
+        </p>
+        <details className="mb-4 text-sm text-slate-300">
+          <summary className="cursor-pointer text-cyan-400">
+            View project details
+          </summary>
+          <ul className="list-disc pl-5 mt-3 space-y-2">
+            {project.features.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
+          </ul>
+        </details>
+        <div className="flex flex-wrap gap-2 mb-5">
+          {project.technologies.map((t) => (
+            <span
+              key={t}
+              className="text-xs px-3 py-1 bg-slate-900 rounded-lg text-slate-300 border border-slate-700"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+        <div className="mt-auto pt-4 border-t border-slate-700 flex flex-wrap gap-4 text-sm">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-2 items-center text-orange-400"
+            >
+              <Github size={16} />
+              {project.githubLabel ?? "Source Code"}
+            </a>
+          )}
+          {project.website && (
+            <a
+              href={project.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-2 items-center text-cyan-400"
+            >
+              <ExternalLink size={16} />
+              Live Website
+            </a>
+          )}
+          {!project.github && !project.website && (
+            <span className="text-slate-400">Public preview unavailable</span>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+export default function Projects() {
+  const [active, setActive] = useState("All Projects");
+  const filtered =
+    active === "All Projects"
+      ? projects
+      : projects.filter((p) => p.category === active);
+  return (
+    <section id="projects" className="py-20 bg-slate-900">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
+          Featured Projects
+        </h2>
+        <div className="h-1 w-24 bg-gradient-to-r from-orange-400 to-cyan-400 mx-auto rounded-full mb-8" />
+        <p className="text-slate-400 text-center max-w-3xl mx-auto mb-10">
+          A selection of professional and personal projects in web development,
+          GIS, e-commerce and CMS.
+        </p>
+        <div
+          className="flex flex-wrap justify-center gap-3 mb-8"
+          role="group"
+          aria-label="Filter projects"
+        >
+          {categories.map((c) => (
+            <button
+              key={c}
+              type="button"
+              aria-pressed={active === c}
+              onClick={() => setActive(c)}
+              className={`px-4 py-2 rounded-lg border text-sm ${active === c ? "bg-orange-600 border-orange-600 text-white" : "bg-slate-800 border-slate-700 text-slate-300"}`}
+            >
+              {c} (
+              {c === "All Projects"
+                ? projects.length
+                : projects.filter((p) => p.category === c).length}
+              )
+            </button>
+          ))}
+        </div>
+        <p aria-live="polite" className="text-sm text-slate-400 mb-5">
+          Showing {filtered.length} of {projects.length} projects
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filtered.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+        <p className="text-xs text-slate-400 text-center mt-10">
+          Professional projects were delivered as part of teams. Proprietary
+          code is not included in public samples. Live websites may have changed
+          since my contributions.
+        </p>
+      </div>
+    </section>
+  );
+}
