@@ -115,12 +115,12 @@ export default function Hero() {
           </div>
 
           <p className="text-2xl md:text-3xl text-slate-300 mb-6 animate-slide-up">
-            Frontend Developer & Tech Consultant
+            Frontend Developer | Software Engineer
           </p>
 
           <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto animate-slide-up-delay">
-            10+ years crafting exceptional web experiences. Transforming
-            business needs into elegant technical solutions.
+            Over 10 years of experience building websites, web applications and
+            software solutions for businesses.
           </p>
 
           <div className="flex justify-center space-x-6 mb-12">
